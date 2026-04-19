@@ -1,0 +1,12 @@
+# Render Blueprint — connect this repo in the Render dashboard (Blueprint or New Web Service).
+# Set environment variables in the dashboard (secrets); do not commit real values.
+services:
+  - type: web
+    name: medsafe-api
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
